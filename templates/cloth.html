@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block title %}
+
+{{ super() }} - {{ title }}
+
+{%endblock %}
+
+{% block content %}
+<h2>Выберите категорию товара</h2>
+<div class="content__cloth__text_menu">
+  <a class="menu__st__category" href="/shoes/">Обувь</a>
+  <a class="menu__st__category" href="/jacket/">Куртки</a>
+</div>
+{% endblock %}

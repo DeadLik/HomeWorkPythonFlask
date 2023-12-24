@@ -1,0 +1,37 @@
+{% extends 'cloth.html' %}
+
+{% block title %}
+
+{{ super() }} - {{ title }}
+{%endblock %}
+
+{% block content %}
+<div class="content__cloth">
+  <img
+    class="img_stl"
+    src="../static/image/jk1.jpg"
+    alt=""
+    width="300"
+    height="300"
+  />
+  <img
+    class="img_stl"
+    src="../static/image/jk2.jpg"
+    alt=""
+    width="300"
+    height="300"
+  />
+  <img
+    class="img_stl"
+    src="../static/image/jk3.jpg"
+    alt=""
+    width="300"
+    height="300"
+  />
+</div>
+<div class="content__cloth__text">
+  <h3>Куртка 1</h3>
+  <h3>Куртка 2</h3>
+  <h3>Куртка 3</h3>
+</div>
+{% endblock %}
