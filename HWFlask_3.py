@@ -1,5 +1,5 @@
 from hashlib import sha256
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, flash
 from flask_wtf import CSRFProtect
 from form import RegistrationForm
 from models import db, User
