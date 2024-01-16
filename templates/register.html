@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+    <body>
+    <h1>Регистрация</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+        <form action="{{ url_for('register') }}" method="post">
+            {{ form.csrf_token }}
+    {% for field in form if ield.name == "csrf_token" %}
+    <p>{{ field.label }}: {{ field}}</p>
+            {% for error in field.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+            {% endfor %}
+    {% endif %}
+    {% endfor %}
+        </form>
+    </body>
+</html>
