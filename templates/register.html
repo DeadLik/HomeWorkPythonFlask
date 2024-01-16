@@ -17,25 +17,13 @@
     {% endwith %}
         <form action="{{ url_for('register') }}" method="post">
             {{ form.csrf_token }}
-            <p>
-                {{ form.name.label }}<br>
-                {{ form.name(size=32) }}
-            </p>
-            <p>
-                {{ form.surname.label }}<br>
-                {{ form.surname(size=32) }}
-            </p>
-            <p>
-                {{ form.email.label }}<br>
-                {{ form.email(size=32) }}
-            </p>
-            <p>
-                {{ form.password.label }}<br>
-                {{ form.password(size=32) }}
-            </p>
-            <p>
-                <input type="submit" value="Зарегистрироваться">
-            </p>
+    {% for field in form if ield.name == "csrf_token" %}
+    <p>{{ field.label }}: {{ field}}</p>
+            {% for error in field.errors %}
+                <span style="color: red;">{{ error }}</span><br>
+            {% endfor %}
+    {% endif %}
+    {% endfor %}
         </form>
     </body>
 </html>
